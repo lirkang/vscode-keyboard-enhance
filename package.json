@@ -1,0 +1,83 @@
+{
+  "name": "vscode-keyboard-enhance",
+  "displayName": "keyboard-enhance",
+  "description": "A extension for enhance keyboard.",
+  "publisher": "likan",
+  "version": "0.0.1",
+  "author": "likan",
+  "repository": "https://github.com/lirkang/vscode-keyboard-enhance",
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "main": "./lib/index.js",
+  "license": "SEE LICENSE IN LICENSE",
+  "categories": [
+    "Keymaps"
+  ],
+  "activationEvents": [
+    "onCommand:keyboard-enhance.select-to-start",
+    "onCommand:keyboard-enhance.select-to-end"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "keyboard-enhance.select-to-start",
+        "category": "keyboard-enhance",
+        "title": "从最后一个光标选中到文档开始"
+      },
+      {
+        "command": "keyboard-enhance.select-to-end",
+        "category": "keyboard-enhance",
+        "title": "从第一个光标选中到文档结束"
+      }
+    ]
+  },
+  "keybindings": [],
+  "scripts": {
+    "vscode:prepublish": "pnpm package",
+    "package": "cross-env NODE_ENV=production rollup -c",
+    "develop": "cross-env NODE_ENV=development rollup -wc",
+    "format": "prettier ./**/*.{js,ts} -w -u --cache",
+    "fix": "run-s format lint",
+    "lint": "eslint ./src/**/* --fix --cache --cache-strategy content"
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "^3.1.9",
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-inject": "^4.0.4",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "@rollup/plugin-typescript": "^8.5.0",
+    "@types/lodash-es": "^4.17.6",
+    "@types/node": "16.x.x",
+    "@types/vscode": "^1.72.0",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.22.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "eslint-plugin-typescript-sort-keys": "^2.1.0",
+    "eslint-plugin-unicorn": "^43.0.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "rollup": "^2.79.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-filesize": "^9.1.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.4.0",
+    "typescript": "~4.7"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  },
+  "vsce": {
+    "dependencies": false,
+    "yarn": false
+  },
+  "volta": {
+    "node": "16.17.0",
+    "yarn": "1.22.19",
+    "npm": "8.15.0"
+  }
+}

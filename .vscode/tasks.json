@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "develop",
+      "isBackground": true,
+      "label": "npm: develop",
+      "problemMatcher": [],
+      "detail": "rollup",
+
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
